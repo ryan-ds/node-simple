@@ -14,7 +14,7 @@ phases:
       - npm ci
       - mkdir dist
       - cp -R src node_modules dist/
-  postbuild:
+  post_build:
     commands:
       - echo Build completed on `date`
   artifacts:
