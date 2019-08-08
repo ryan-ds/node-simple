@@ -4,20 +4,17 @@ phases:
   install:
     runtime-versions:
       nodejs: 8
-  pre_build:
-    commands:
-      - echo Installing source NPM dependencies...
-      - npm install
   build:
     commands:
       - echo Build started on `date`
-      - npm ci
-      - mkdir dist
-      - cp -R src node_modules installApp.sh appspec.yml dist/
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - '**/*'
+    - src
+    - scripts
+    - package.json
+    - package-lock.json
+    - appspec.yml
   base-directory: 'dist'

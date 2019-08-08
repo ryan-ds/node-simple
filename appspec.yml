@@ -1,9 +1,17 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: src/app.js
     destination: /home/ubuntu/app
 hooks:
-  ApplicationStart:
-    - location: ./installApp.sh
+  BeforeInstall:
+    - location: scripts/install-deps.sh
       timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/start-app.sh
+      timeout: 300
+  ApplicationStop:
+    - location: scripts/stop-app.sh
+      timeout: 300
+      runas: root
