@@ -17,4 +17,4 @@ artifacts:
     - package.json
     - package-lock.json
     - appspec.yml
-  base-directory: 'dist'
+  # base-directory: 'dist'
