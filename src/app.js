@@ -2,6 +2,8 @@ const app = require('express')()
 const cors = require('cors')
 const helmet = require('helmet')
 
+const PORT = 3000
+
 app.use(helmet())
 app.use(cors())
 
@@ -246,4 +248,4 @@ app.get('/', (_, res) => {
   })
 })
 
-app.listen(3000, () => console.log(`App running at port 3000`))
+app.listen(PORT, () => console.log(`App running at port ${PORT}`))
