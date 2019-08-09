@@ -8,7 +8,7 @@ app.use(helmet())
 app.use(cors())
 
 app.get('/health-check', (_, res) => {
-  res.send('Success!')
+  res.send('It works!')
 })
 
 app.get('/', (_, res) => {
