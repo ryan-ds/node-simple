@@ -1,0 +1,23 @@
+# aws codebuild for React and deployment to S3
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 8
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+      - apt-get install python3-setuptools
+      - easy_install3 pip
+      - pip -V
+      - sudo chown -R $USER:$USER ~/.local/
+      - export PATH=$PATH:~/.local/bin/
+      - pip install --upgrade --user awsebcli
+      - eb --version
+  build:
+    commands:
+      - echo build started on `date`
+  post_build:
+    commands:
+      - echo build completed on `date`
