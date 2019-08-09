@@ -12,7 +12,8 @@ phases:
       - pip install --upgrade --user awsebcli
       - eb --version
       - echo Installing source NPM dependencies...
-      - npm install
+      - npm ci
+      - eb deploy develop
   build:
     commands:
       - echo build started on `date`
