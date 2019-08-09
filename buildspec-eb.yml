@@ -7,7 +7,6 @@ phases:
   pre_build:
     commands:
       - apt-get install python3-setuptools build-essential -y
-      - python /usr/lib/python2.7/dist-packages/easy_install.py pip
       - pip -V
       - sudo chown -R $USER:$USER ~/.local/
       - export PATH=$PATH:~/.local/bin/
