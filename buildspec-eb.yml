@@ -6,15 +6,15 @@ phases:
       nodejs: 8
   pre_build:
     commands:
-      - echo Installing source NPM dependencies...
-      - npm install
-      - apt-get install python3-setuptools
-      - easy_install3 pip
+      - apt-get install python3-setuptools build-essential -y
+      - python /usr/lib/python2.7/dist-packages/easy_install.py pip
       - pip -V
       - sudo chown -R $USER:$USER ~/.local/
       - export PATH=$PATH:~/.local/bin/
       - pip install --upgrade --user awsebcli
       - eb --version
+      - echo Installing source NPM dependencies...
+      - npm install
   build:
     commands:
       - echo build started on `date`
