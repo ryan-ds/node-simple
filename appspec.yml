@@ -1,18 +1,18 @@
 version: 0.0
 os: linux
 files:
-  - source: ./
+  - source: /
     destination: /home/ubuntu
 hooks:
   BeforeInstall:
-    - location: ./scripts/install-deps.sh
+    - location: scripts/install-deps.sh
       timeout: 300
-      runas: root
+      runas: ubuntu
   ApplicationStart:
-    - location: ./scripts/start-app.sh
+    - location: scripts/start-app.sh
       timeout: 300
-      runas: root
+      runas: ubuntu
   ApplicationStop:
-    - location: ./scripts/stop-app.sh
+    - location: scripts/stop-app.sh
       timeout: 300
-      runas: root
+      runas: ubuntu

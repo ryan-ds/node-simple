@@ -1,2 +1,2 @@
 #!/bin/bash
-pm2 stop node-app
+pm2 stop node-app || true
