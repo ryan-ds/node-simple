@@ -8,6 +8,10 @@ hooks:
     - location: scripts/install-deps.sh
       timeout: 300
       runas: ubuntu
+  AfterInstall:
+  - location: scripts/after-install.sh
+    timeout: 300
+    runas: ubuntu
   ApplicationStart:
     - location: scripts/start-app.sh
       timeout: 300
