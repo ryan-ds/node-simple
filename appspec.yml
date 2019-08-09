@@ -5,14 +5,14 @@ files:
     destination: /home/ubuntu
 hooks:
   BeforeInstall:
-    - location: scripts/install-deps.sh
+    - location: ./scripts/install-deps.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: scripts/start-app.sh
+    - location: ./scripts/start-app.sh
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: scripts/stop-app.sh
+    - location: ./scripts/stop-app.sh
       timeout: 300
       runas: root
