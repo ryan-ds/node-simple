@@ -8,7 +8,6 @@ phases:
     commands:
       - apt-get install python3-setuptools build-essential -y
       - pip -V
-      - sudo chown -R $USER:$USER ~/.local/
       - export PATH=$PATH:~/.local/bin/
       - pip install --upgrade --user awsebcli
       - eb --version
