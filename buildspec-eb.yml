@@ -8,7 +8,7 @@ phases:
     commands:
       - apt-get install python3-setuptools build-essential -y
       - pip -V
-      - export PATH=$PATH:~/.local/bin/
+      - export PATH=$PATH:/root/.local/bin
       - pip install --upgrade --user awsebcli
       - eb --version
       - echo Installing source NPM dependencies...
